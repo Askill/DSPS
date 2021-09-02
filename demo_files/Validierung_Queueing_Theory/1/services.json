@@ -1,0 +1,21 @@
+{
+    "id": "/Matz/Patrice/Master-Thesis/Service.schema.json",
+    "name": "Service Definition for Example Application",
+    "services": [
+        {
+            "scaleUpAt": 0.8,
+            "scaleDownAt": 0.3,
+            "scaleingMetric": "CPU",
+            "serviceID": "default",
+            "scales": false,
+            "scale": 1,
+            "scalingDelay": 0,
+            "defaultServer": {
+                "maxCPU": 100,
+                "maxRAM": 100,
+                "maxIO": 10000,
+                "maxNET": 10000
+            }
+        }
+    ]
+}

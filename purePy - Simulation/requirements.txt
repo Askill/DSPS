@@ -1,0 +1,8 @@
+# python 3.9
+dash
+numpy
+matplotlib
+jsonschema
+pandas
+dash_bootstrap_components
+dash_cytoscape

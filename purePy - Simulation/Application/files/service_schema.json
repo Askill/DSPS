@@ -1,0 +1,100 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "/Matz/Patrice/Master-Thesis/Service.schema.json",
+    "title": "Profile",
+    "description": "An Applicarions measure Profile in different Scenarios",
+    "type": "object",
+    "properties": {
+        "id":{
+            "description": "name of the schema used to validate, optinal",
+            "type": "string"
+        },
+        "name": {
+            "description": "user defined name, optinal",
+            "type": "string"
+        },
+        "scenarios": {
+            "description": "",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "serviceID": {
+                        "description": "user defined name, optinal",
+                        "type": "string"
+                    },
+                    "scales": {
+                        "description": "Does this service scale",
+                        "type": "boolean"
+                    },
+                    "scaleUpAt": {
+                        "description": "average load to send the scale up command",
+                        "type": "number"
+                    },
+                    "scaleTime": {
+                        "description": "amount of time in seconds needed for the deployment of another replic",
+                        "type": "number"
+                    },
+                    "scaleDownAt": {
+                        "description": "avergae load to sclae down at",
+                        "type": "number"
+                    },
+                    "scale": {
+                        "description": "initial scale of a service",
+                        "type": "number"
+                    },
+                    "scalingDelay":{
+                        "description": "how long a service need to scale up in seconds",
+                        "type": "number"
+                    },
+                    "scalingMetric": {
+                        "description": "which metric usage to go by CPU, RAM, IO, NET",
+                        "type" : "object",
+                        "required" : ["metric"],
+                        "properties" : {
+                            "metric" : {
+                                "type" : "string",
+                                "enum" : ["CPU", "RAM", "IO", "NET"]
+                            }
+                        }
+                    },
+                    "defaultServer": {
+                        "description": "The unique identifier for a scenario",
+                        "type": "object",
+                        "properties": {
+                            "maxCPU": {
+                                "description": "which metric usage to go by CPU, RAM, IO, NET",
+                                "type": "integer"
+                            },
+                            "maxRAM": {
+                                "description": "which metric usage to go by CPU, RAM, IO, NET",
+                                "type": "integer"
+                            },
+                            "maxIO": {
+                                "description": "which metric usage to go by CPU, RAM, IO, NET",
+                                "type": "integer"
+                            },
+                            "maxNET": {
+                                "description": "which metric usage to go by CPU, RAM, IO, NET",
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "maxCPU",
+                            "maxRAM",
+                            "maxIO",
+                            "maxNET"
+                        ]
+                    }
+                },
+                "required": [
+                    "defaultServer",
+                    "serviceID",
+                    "scales"
+                ]
+            }
+        }
+    }
+}

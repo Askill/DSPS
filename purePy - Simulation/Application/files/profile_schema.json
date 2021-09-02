@@ -1,0 +1,115 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "/Matz/Patrice/Master-Thesis/Profile.schema.json",
+    "title": "Profile",
+    "description": "An Applications measure Profile in different Scenarios",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "user defined name, optional",
+            "type": "string"
+        },
+        "scenarios": {
+            "description": "",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "user defined name, optional",
+                        "type": "string"
+                    },
+                    "scenarioID": {
+                        "description": "The unique identifier for a scenario",
+                        "type": "integer"
+                    },
+                    "interactions": {
+                        "description": "",
+                        "type": "array",
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "description": "user defined name, optional",
+                                    "type": "string"
+                                },
+                                "interactionID": {
+                                    "description": "The unique identifier for a interaction",
+                                    "type": "string"
+                                },
+                                "delay": {
+                                    "description": "Time between two interactions in seconds, cause by human interaction",
+                                    "type": "integer"
+                                },
+                                "functions": {
+                                    "description": "array of functions with measured ressource utilization",
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "uniqueItems": true,
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "functionID": {
+                                                "description": "The unique identifier for a function",
+                                                "type": "string"
+                                            },
+                                            "cpu": {
+                                                "description": "cpu utilization in percent",
+                                                "type": "number"
+                                            },
+                                            "cpu_time": {
+                                                "description": "amount of time function takes to execute in seconds",
+                                                "type": "number"
+                                            },
+                                            "ram": {
+                                                "description": "amount of RAM used while executign the function",
+                                                "type": "number"
+                                            },
+                                            "io": {
+                                                "description": "amount of data read from Disk",
+                                                "type": "number"
+                                            },
+                                            "net": {
+                                                "description": "amount of data gotten over the network",
+                                                "type": "number"
+                                            },
+                                            "delay": {
+                                                "description": "delay in nano seconds",
+                                                "type": "integer"
+                                            },
+                                            "callbacks": {
+                                                "description": "The ID of the Callback Function. -1 means no callback",
+                                                "type": "array",
+                                                "minItems": 1,
+                                                "uniqueItems": true,
+                                                "items":{
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "functionID"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "interactionID",
+                                "functions",
+                                "delay"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "scenarioID",
+                    "interactions"
+                ]
+            }
+        }
+    }
+}

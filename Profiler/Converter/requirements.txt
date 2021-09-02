@@ -1,0 +1,5 @@
+networkx
+pyvis
+pandas
+matplotlib
+scipy

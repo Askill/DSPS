@@ -1,0 +1,10 @@
+  [
+    {
+      "kind": "triangle",
+      "start": 0,
+      "end": 0.01,
+      "highpoint": 0.001,
+      "volume": 100,
+      "scenarioID": 1
+    }
+  ]

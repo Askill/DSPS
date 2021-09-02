@@ -1,0 +1,1 @@
+ python main.py -p ../demo_files/profile.json -s ../demo_files/services.json -m ../demo_files/mapping.json -d ../demo_files/distribution.json

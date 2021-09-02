@@ -1,0 +1,13 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "https://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<!-- This config is required for load-time weaving to work. You also need to enable the javaagent, as described in the DEV_README.md -->
+<aspectj>
+  <!-- use custom Xlint properties to disable a few error messages. -->
+  <weaver options="-Xlintfile:META-INF/Xlint.properties -Xset:weaveJavaxPackages=true">
+    <include within="de.mypackage..*" />
+    <include within="io.micrometer..*" />
+    <include within="javax.persistence.*" />
+  </weaver>
+  <aspects>
+    <aspect name="de.mypackage.aspects.Monitor" />
+  </aspects>
+</aspectj>

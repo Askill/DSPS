@@ -1,0 +1,15 @@
+
+  Monitor monitor;
+
+  public ServletMeter(){
+    try{
+      this.monitor = new Monitor();
+    }
+    catch (Exception e){
+        log.error(e.toString());
+    }
+  } 
+
+this.monitor.signifyRoot(start, path, "start");
+
+this.monitor.signifyRoot(System.currentTimeMillis(), path, "end");

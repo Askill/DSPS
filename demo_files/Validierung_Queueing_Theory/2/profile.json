@@ -1,0 +1,54 @@
+{
+    "$id": "/Matz/Patrice/Master-Thesis/Profile.schema.json",
+    "name": "name",
+    "scenarios": [
+        {
+            "scenarioID": 1,
+            "interactions": [
+                {
+                    "name": "1",
+                    "interactionID": "1",
+                    "delay": 0,
+                    "functions": [
+                        {
+                            "functionID": "x.f1",
+                            "cpu": 100,
+                            "cpu_time": 1000000,
+                            "ram": 1,
+                            "io": 0,
+                            "net": 0,
+                            "delay": 0,
+                            "callbacks": [
+                                "f2"
+                            ]
+                        },
+                        {
+                            "functionID": "f2",
+                            "cpu": 100,
+                            "cpu_time": 1000000000,
+                            "ram": 1,
+                            "io": 0,
+                            "net": 0,
+                            "delay": 0,
+                            "callbacks": [
+                                "x.f3"
+                            ]
+                        },
+                        {
+                            "functionID": "x.f3",
+                            "cpu": 100,
+                            "cpu_time": 1000000,
+                            "ram": 1,
+                            "io": 0,
+                            "net": 0,
+                            "delay": 0,
+                            "callbacks": [
+                                "-1"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
