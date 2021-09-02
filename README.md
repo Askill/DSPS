@@ -1,4 +1,6 @@
 # DSPS
+The implementation found here is barely a proof of concept, feel free to improve it. :)
+I just liked to concept but don't really have the time to continue it, now that my Thesis is done.
 
 In this folder you will find the digital appendix and the implementation of my master thesis.  
 As explained extensively in the thesis, the implementation consists of 2 parts: the profiler and the simulation.   
